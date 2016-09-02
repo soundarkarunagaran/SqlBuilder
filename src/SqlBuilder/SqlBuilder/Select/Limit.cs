@@ -12,10 +12,11 @@ namespace SqlBuilder.Select
                 this.Context = SqlBuilder.Database(context.Dialect);
 
                 var orderColumnName = "row_number";
-
+                var orderby = context.Statements.FirstOrDefault(item => item.GetType() == typeof(OrderBy));
+                context.Statements.Remove(orderby);
                 var column = context.Statements.FirstOrDefault(item => item.GetType() == typeof(Column));
                 column.StatementBock = column.StatementBock.Insert(0,
-                    string.Format("row_number() over(order by id) as {0},", orderColumnName));
+                    string.Format("row_number() over({1}) as {0},", orderColumnName,orderby.StatementBock));
 
                 this.StatementBock = this.Context.Select.All.Form(context.Statements.Last())
                     .Where(string.Format("{0} between {1} and {2}", orderColumnName, start, end))

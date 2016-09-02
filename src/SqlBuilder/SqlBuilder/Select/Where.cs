@@ -7,9 +7,11 @@
             this.StatementBock = "where " + condition;
         }
 
-        public Limit Limit(int start, int end)
+        public OrderBy OrderBy(params string[] columns)
         {
-            return new Limit(this.Context, start, end);
+            return new OrderBy(Context ,columns);
         }
+
+
     }
 }

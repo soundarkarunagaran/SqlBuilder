@@ -48,6 +48,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Select\Limit.cs" />
+    <Compile Include="Select\OrderBy.cs" />
     <Compile Include="Select\Select.cs" />
     <Compile Include="SqlBuilder.cs" />
     <Compile Include="Select\Where.cs" />
