@@ -1,17 +1,19 @@
-﻿namespace SqlBuilder.Select
+﻿using System;
+
+namespace SqlBuilder.Select
 {
-    public class Column
+    public class Column : StatementBase
     {
-        private readonly SqlBuilder _context;
 
         internal Column(SqlBuilder context, params string[] column)
+            : base(context)
         {
-            _context = context;
+            this.StatementBock = String.Join(",", column);
         }
 
         public Form Form(string tableName, string aliasName = null)
         {
-            return new Form(this._context, tableName, aliasName);
+            return new Form(Context, tableName, aliasName);
         }
     }
 }

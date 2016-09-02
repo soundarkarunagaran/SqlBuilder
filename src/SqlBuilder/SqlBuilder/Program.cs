@@ -10,7 +10,7 @@ namespace SqlBuilder
     {
         static void Main(string[] args)
         {
-            SqlBuilder.Database(Dialect.Sqlite).Select.All.Form("test").Where("a");
+       var sql=     SqlBuilder.Database(Dialect.Sqlite).Select.All.Form("test").Where("1=1").Limit(1,10).ToString();
         }
     }
 }

@@ -1,22 +1,20 @@
 ﻿namespace SqlBuilder.Select
 {
-    public class Select
+    public class Select : StatementBase
     {
-        private readonly SqlBuilder _context;
-
-        internal Select(SqlBuilder context)
+        internal Select(SqlBuilder context) : base(context)
         {
-            _context = context;
+            this.StatementBock = "select";
         }
 
         public Column All
         {
-            get { return new Column(this._context, "*"); }
+            get { return new Column(Context, "*"); }
         }
 
         public Column Column(params string[] column)
         {
-            return new Column(this._context, column);
+            return new Column(Context, column);
         }
     }
 }

@@ -1,17 +1,17 @@
 ﻿namespace SqlBuilder.Select
 {
-    public class Form
+    public class Form : StatementBase
     {
-        private readonly SqlBuilder _context;
 
         internal Form(SqlBuilder context, string tableName, string aliasName = null)
+            : base(context)
         {
-            _context = context;
+            this.StatementBock = "form";
         }
 
         public Where Where(string condition)
         {
-            return new Where(this._context, condition);
+            return new Where(Context, condition);
         }
     }
 }
