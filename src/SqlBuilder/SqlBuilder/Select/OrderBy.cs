@@ -8,7 +8,7 @@ namespace SqlBuilder.Select
 {
     public class OrderBy : StatementBase
     {
-        public OrderBy(SqlBuilder context, params string[] columns)
+        internal OrderBy(SqlBuilder context, params string[] columns)
             : base(context)
         {
             this.StatementBock = string.Format("order by {0}", string.Join(",", columns));
