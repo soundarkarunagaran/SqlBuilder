@@ -8,8 +8,13 @@ namespace SqlBuilder
 {
     public abstract class StatementBase
     {
-        public string StatementBock { get;protected set; }
-        protected readonly SqlBuilder Context;
+        public string StatementBock { get; set; }
+        internal SqlBuilder Context { get; set; }
+
+        protected StatementBase()
+        {
+        }
+
 
         protected StatementBase(SqlBuilder context)
         {
@@ -19,7 +24,7 @@ namespace SqlBuilder
 
         public override string ToString()
         {
-           return  Context.ToString();
+            return Context.ToString();
         }
     }
 }

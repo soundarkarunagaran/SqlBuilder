@@ -9,13 +9,13 @@ namespace SqlBuilder
 {
     public class SqlBuilder
     {
+        public string Dialect { get; private set; }
         internal IList<StatementBase> Statements { get; private set; }
 
         private SqlBuilder()
         {
             Statements = new List<StatementBase>();
         }
-
 
         public void AddStatement(StatementBase statment)
         {
@@ -30,7 +30,7 @@ namespace SqlBuilder
 
         public static SqlBuilder Database(string dialect = "")
         {
-            return new SqlBuilder();
+            return new SqlBuilder() {Dialect = dialect};
         }
 
         public Select.Select Select
