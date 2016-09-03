@@ -15,15 +15,24 @@ namespace SqlBuilder.Statment.Select
         {
             return new ColumnStatment(Context, column);
         }
-
+        /// <summary>
+        /// 查询一个表
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <returns></returns>
         public FormStatment Form(string tableName)
         {
             return new FormStatment(Context, tableName);
         }
 
-        public FormStatment Form(StatementBase statment)
+        /// <summary>
+        /// 子查询
+        /// </summary>
+        /// <param name="statment"></param>
+        /// <returns></returns>
+        public FormStatment Form(StatementBase subStatment)
         {
-            return new FormStatment(this.Context, statment);
+            return new FormStatment(this.Context, subStatment);
         }
     }
 }

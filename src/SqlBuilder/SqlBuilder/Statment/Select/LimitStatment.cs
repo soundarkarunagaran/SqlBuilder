@@ -4,14 +4,11 @@ namespace SqlBuilder.Statment.Select
 {
     public class LimitStatment : StatementBase
     {
-        internal LimitStatment(SqlBuilder context, int start, int end) : base()
+        internal LimitStatment(SqlBuilder context, int start, int end) : base(context, true)
         {
             if (context.Dialect == Dialect.SqlServer2005)
             {
-                //构造一个新的查询，讲传参进来的查询当作子查询
-                this.Context = SqlBuilder.Database(context.Dialect);
-
-                /* 转换查询为以下格式
+              /* 转换查询为以下格式
                 select * form (
                     select row_number() over(order by id desc) as row_number,* form test as t where 1=1
                 ) where row_number between 1 and 10
@@ -34,7 +31,6 @@ namespace SqlBuilder.Statment.Select
                 this.Context = context;
                 this.StatementBock = string.Format("limit{0},{1}", start, end);
             }
-            this.Context.AddStatement(this);
         }
     }
 }

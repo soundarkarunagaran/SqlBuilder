@@ -5,14 +5,18 @@
         public string StatementBock { get; set; }
         internal SqlBuilder Context { get; set; }
 
-        protected StatementBase()
-        {
-        }
 
-        protected StatementBase(SqlBuilder context)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="isNew">是否为一个新的查询</param>
+        protected StatementBase(SqlBuilder context, bool isNew = false)
         {
-            Context =  SqlBuilder.Database(context.Dialect);
-            Context.Statements.AddRange(context.Statements);
+            Context = SqlBuilder.Database(context.Dialect);
+            if (!isNew)
+                Context.Statements.AddRange(context.Statements);
             Context.AddStatement(this);
         }
 
