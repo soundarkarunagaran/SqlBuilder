@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SqlBuilder
+﻿namespace SqlBuilder.Statment
 {
     public abstract class StatementBase
     {
@@ -15,10 +9,10 @@ namespace SqlBuilder
         {
         }
 
-
         protected StatementBase(SqlBuilder context)
         {
-            Context = context;
+            Context =  SqlBuilder.Database(context.Dialect);
+            Context.Statements.AddRange(context.Statements);
             Context.AddStatement(this);
         }
 

@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 
-namespace SqlBuilder.Select
+namespace SqlBuilder.Statment.Select
 {
-    public class Limit : StatementBase
+    public class LimitStatment : StatementBase
     {
-        internal Limit(SqlBuilder context, int start, int end) : base()
+        internal LimitStatment(SqlBuilder context, int start, int end) : base()
         {
             if (context.Dialect == Dialect.SqlServer2005)
             {
@@ -18,10 +18,10 @@ namespace SqlBuilder.Select
                  */
 
                 var orderColumnName = "row_number";
-                var orderby = context.Statements.FirstOrDefault(item => item.GetType() == typeof(OrderBy));
+                var orderby = context.Statements.FirstOrDefault(item => item.GetType() == typeof (OrderByStatment));
                 context.Statements.Remove(orderby);
 
-                var column = context.Statements.FirstOrDefault(item => item.GetType() == typeof(Column));
+                var column = context.Statements.FirstOrDefault(item => item.GetType() == typeof (ColumnStatment));
                 column.StatementBock = column.StatementBock.Insert(0,
                     string.Format("row_number() over({1}) as {0},", orderColumnName, orderby.StatementBock));
 

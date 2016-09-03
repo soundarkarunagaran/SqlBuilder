@@ -41,18 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Select\As.cs" />
-    <Compile Include="Select\Column.cs" />
+    <Compile Include="Statment\Select\AsStatment.cs" />
+    <Compile Include="Statment\Select\ColumnStatment.cs" />
     <Compile Include="Dialect.cs" />
-    <Compile Include="Select\Form.cs" />
+    <Compile Include="Statment\Select\FormStatment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Select\Limit.cs" />
-    <Compile Include="Select\OrderBy.cs" />
-    <Compile Include="Select\Select.cs" />
+    <Compile Include="Statment\Select\GroupByStatment.cs" />
+    <Compile Include="Statment\Select\HavingStatment.cs" />
+    <Compile Include="Statment\Select\LimitStatment.cs" />
+    <Compile Include="Statment\Select\OrderByStatment.cs" />
+    <Compile Include="Statment\Select\SelectStatment.cs" />
     <Compile Include="SqlBuilder.cs" />
-    <Compile Include="Select\Where.cs" />
-    <Compile Include="StatementBase.cs" />
+    <Compile Include="Statment\Select\WhereStatment.cs" />
+    <Compile Include="Statment\StatementBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
