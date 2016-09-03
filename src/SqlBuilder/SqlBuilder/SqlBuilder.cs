@@ -29,7 +29,6 @@ namespace SqlBuilder
             return string.Join(" \n", this.Statements.Select(item => item.StatementBock));
         }
 
-
         public static SqlBuilder Database(string dialect = "")
         {
             return new SqlBuilder() {Dialect = dialect};
