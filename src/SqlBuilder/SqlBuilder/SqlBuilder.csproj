@@ -47,6 +47,7 @@
     <Compile Include="Statment\Select\AsStatment.cs" />
     <Compile Include="Statment\Select\ColumnStatment.cs" />
     <Compile Include="Dialect.cs" />
+    <Compile Include="Statment\Select\DistinctStatment.cs" />
     <Compile Include="Statment\Select\FormStatment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
