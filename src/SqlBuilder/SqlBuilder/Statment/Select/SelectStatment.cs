@@ -7,6 +7,12 @@
             this.StatementBock = "select";
         }
 
+        
+                    public DistinctStatment Distinct
+        {
+            get { return new DistinctStatment(Context); }
+        }
+
         public ColumnStatment All
         {
             get { return new ColumnStatment(Context, "*"); }
