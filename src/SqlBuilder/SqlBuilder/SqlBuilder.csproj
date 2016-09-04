@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Statment\Select\InnerJoinStatment.cs" />
+    <Compile Include="Statment\Select\OnStatment.cs" />
     <Compile Include="Statment\Select\ORStatment.cs" />
     <Compile Include="Statment\Select\AndStatment.cs" />
     <Compile Include="Statment\Select\AsStatment.cs" />
