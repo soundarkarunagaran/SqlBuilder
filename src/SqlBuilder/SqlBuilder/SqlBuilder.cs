@@ -44,7 +44,10 @@ namespace SqlBuilder
             UnionStatement result = null;
             foreach (var statment in statments)
             {
-                result = new UnionStatement(this, statment);
+                if(result==null)
+                    result = new UnionStatement(this, statment);
+                else
+                    result.Union(statment);
             }
             return result;
         }
@@ -54,7 +57,10 @@ namespace SqlBuilder
             UnionAllStatement result = null;
             foreach (var statment in statments)
             {
-                result = new UnionAllStatement(this, statment);
+                if (result == null)
+                    result = new UnionAllStatement(this, statment);
+                else
+                    result.UnionAll(statment);
             }
             return result;
         }
