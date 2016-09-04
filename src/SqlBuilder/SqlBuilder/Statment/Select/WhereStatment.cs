@@ -18,9 +18,9 @@
             return new AndStatment(Context, condition);
         }
 
-        public AndStatment Or(string condition)
+        public OrStatment Or(string condition)
         {
-            return new AndStatment(Context, condition);
+            return new OrStatment(Context, condition);
         }
 
         public GroupByStatment GroupBy(params string[] columns)

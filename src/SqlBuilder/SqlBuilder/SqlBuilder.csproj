@@ -59,6 +59,8 @@
     <Compile Include="Statment\Select\OrderByStatment.cs" />
     <Compile Include="Statment\Select\SelectStatment.cs" />
     <Compile Include="SqlBuilder.cs" />
+    <Compile Include="Statment\Select\UnionAllStatement.cs" />
+    <Compile Include="Statment\Select\UnionStatement.cs" />
     <Compile Include="Statment\Select\WhereStatment.cs" />
     <Compile Include="Statment\StatementBase.cs" />
   </ItemGroup>

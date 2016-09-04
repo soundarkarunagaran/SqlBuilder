@@ -17,14 +17,15 @@ namespace SqlBuilder
                 .As("t")
                 .Where("1=1")
                 .And("2=2")
-                .Or("3=3")
-                .OrderBy("id desc")
-                .Limit(1, 10)
-                .ToString();
+                .Or("3=3");
+
+     
 
             var subQuery = SqlBuilder.Database(Dialect.SqlServer2005).
-                Select.All.Form("test").As("t").Where("1=1").OrderBy("id").Limit(1, 10);
+                Select.All.Form("test").As("t").Where("1=1");
 
+            var union = SqlBuilder.Database(Dialect.Sqlite).Union(sql, subQuery)
+                .UnionAll(sql);
 
             var sql2 =
                 SqlBuilder.Database(Dialect.SqlServer2005)

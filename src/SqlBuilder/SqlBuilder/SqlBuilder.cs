@@ -38,5 +38,25 @@ namespace SqlBuilder
         {
             get { return new SelectStatment(this); }
         }
+
+        public UnionStatement Union(params StatementBase[] statments)
+        {
+            UnionStatement result = null;
+            foreach (var statment in statments)
+            {
+                result = new UnionStatement(this, statment);
+            }
+            return result;
+        }
+
+        public UnionStatement UnionAll(params StatementBase[] statments)
+        {
+            UnionAllStatement result = null;
+            foreach (var statment in statments)
+            {
+                result = new UnionAllStatement(this, statment);
+            }
+            return result;
+        }
     }
 }
