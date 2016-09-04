@@ -2,11 +2,17 @@
 {
     public class FormStatment : StatementBase
     {
+        protected virtual string Symbol
+        {
+            get { return "union"; }
+        }
+
+
         internal FormStatment(SqlBuilder context, string tableName)
             : base(context)
         {
-            this.StatementBock = string.Format("form {0}", tableName);
         }
+
 
         /// <summary>
         /// 子查询
@@ -16,12 +22,29 @@
         internal FormStatment(SqlBuilder context, StatementBase statment)
             : base(context)
         {
-            this.StatementBock = string.Format("form ({0})", statment.ToString());
+            this.StatementBock = string.Format("{0} ({1})", this.Symbol, statment.ToString());
         }
 
 
+        /// <summary>
+        /// 查询一个表
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <returns></returns>
+        public FormStatment Form(string tableName)
+        {
+            return new FormStatment(Context, tableName);
+        }
 
-
+        /// <summary>
+        /// 子查询
+        /// </summary>
+        /// <param name="statment"></param>
+        /// <returns></returns>
+        public FormStatment Form(StatementBase subStatment)
+        {
+            return new FormStatment(this.Context, subStatment);
+        }
 
         public WhereStatment Where(string condition)
         {

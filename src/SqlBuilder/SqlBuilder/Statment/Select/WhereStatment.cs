@@ -4,12 +4,11 @@
     {
         internal WhereStatment(SqlBuilder context) : base(context)
         {
-
         }
 
         internal WhereStatment(SqlBuilder context, string condition) : base(context)
         {
-            this.StatementBock = "where " + condition;
+            this.StatementBock = string.Format("where {0}", condition);
         }
 
 
