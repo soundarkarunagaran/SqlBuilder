@@ -23,8 +23,6 @@
 
 
 
-
-
         public WhereStatment Where(string condition)
         {
             return new WhereStatment(Context, condition);
