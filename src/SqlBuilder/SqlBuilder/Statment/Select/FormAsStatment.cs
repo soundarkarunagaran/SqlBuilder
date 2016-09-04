@@ -1,8 +1,8 @@
 namespace SqlBuilder.Statment.Select
 {
-    public class AsStatment : StatementBase
+    public class FormAsStatment : StatementBase
     {
-        public AsStatment(SqlBuilder context, string aliasName)
+        public FormAsStatment(SqlBuilder context, string aliasName)
             : base(context)
         {
             this.StatementBock = string.Format("as {0}", aliasName);
@@ -27,6 +27,23 @@ namespace SqlBuilder.Statment.Select
         {
             return new FormStatment(this.Context, subStatment);
         }
+
+        public InnerJoinStatment InnerJoin(string tableName)
+        {
+            return new InnerJoinStatment(Context, tableName);
+        }
+
+        public LeftJoinStatment LeftJoin(string tableName)
+        {
+            return new LeftJoinStatment(Context, tableName);
+        }
+
+        public RightJoinStatment RightJoin(string tableName)
+        {
+            return new RightJoinStatment(Context, tableName);
+        }
+
+
 
         public WhereStatment Where(string condition)
         {

@@ -8,29 +8,21 @@ namespace SqlBuilder.Statment.Select
 {
     public class InnerJoinStatment : StatementBase
     {
+        protected virtual string Symbol
+        {
+            get { return "inner join"; }
+        }
+
         internal InnerJoinStatment(SqlBuilder context, string tableName) : base(context)
         {
-            this.StatementBock = string.Format("inner join {0}", tableName);
+            this.StatementBock = string.Format("{0} {1}", Symbol, tableName);
         }
 
-        public WhereStatment Where(string condition)
+
+        public JoinAsStatment As(string aliasName)
         {
-            return new WhereStatment(Context, condition);
+            return new JoinAsStatment(Context, aliasName);
         }
 
-        public AsStatment As(string aliasName)
-        {
-            return new AsStatment(Context, aliasName);
-        }
-
-        public OrderByStatment OrderBy(params string[] columns)
-        {
-            return new OrderByStatment(Context, columns);
-        }
-
-        public GroupByStatment GroupBy(params string[] columns)
-        {
-            return new GroupByStatment(Context, columns);
-        }
     }
 }

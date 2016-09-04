@@ -44,11 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Statment\JoinAsStatment.cs" />
     <Compile Include="Statment\Select\InnerJoinStatment.cs" />
+    <Compile Include="Statment\Select\RightJoinStatment.cs" />
+    <Compile Include="Statment\Select\LeftJoinStatment.cs" />
     <Compile Include="Statment\Select\OnStatment.cs" />
     <Compile Include="Statment\Select\ORStatment.cs" />
     <Compile Include="Statment\Select\AndStatment.cs" />
-    <Compile Include="Statment\Select\AsStatment.cs" />
+    <Compile Include="Statment\Select\FormAsStatment.cs" />
     <Compile Include="Statment\Select\ColumnStatment.cs" />
     <Compile Include="Dialect.cs" />
     <Compile Include="Statment\Select\DistinctStatment.cs" />

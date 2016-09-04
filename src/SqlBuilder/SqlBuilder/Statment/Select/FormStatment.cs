@@ -46,14 +46,30 @@
             return new FormStatment(this.Context, subStatment);
         }
 
+
         public WhereStatment Where(string condition)
         {
             return new WhereStatment(Context, condition);
         }
 
-        public AsStatment As(string aliasName)
+        public FormAsStatment As(string aliasName)
         {
-            return new AsStatment(Context, aliasName);
+            return new FormAsStatment(Context, aliasName);
+        }
+
+        public InnerJoinStatment InnerJoin(string tableName)
+        {
+            return new InnerJoinStatment(Context, tableName);
+        }
+
+        public LeftJoinStatment LeftJoin(string tableName)
+        {
+            return new LeftJoinStatment(Context, tableName);
+        }
+
+        public RightJoinStatment RightJoin(string tableName)
+        {
+            return new RightJoinStatment(Context, tableName);
         }
 
         public OrderByStatment OrderBy(params string[] columns)
