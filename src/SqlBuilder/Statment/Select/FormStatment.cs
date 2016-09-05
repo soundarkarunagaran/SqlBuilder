@@ -4,13 +4,14 @@
     {
         protected virtual string Symbol
         {
-            get { return "union"; }
+            get { return "form"; }
         }
 
 
         internal FormStatment(SqlBuilder context, string tableName)
             : base(context)
         {
+            this.StatementBock = string.Format("{0} {1}", this.Symbol, tableName);
         }
 
 

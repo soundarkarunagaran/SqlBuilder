@@ -12,5 +12,10 @@
         {
             return new HavingStatment(this.Context,columns);
         }
+
+        public OrderByStatment OrderBy(params string[] columns)
+        {
+            return new OrderByStatment(Context, columns);
+        }
     }
 }

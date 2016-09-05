@@ -11,13 +11,10 @@ namespace SqlBuilder
         static void Main(string[] args)
         {
             var sql = SqlBuilder.Database(Dialect.Sqlite).
-                Select.Distinct.Column("a", "b")
-                .Column("c")
-                .Form("test")
-                .As("t")
-                .Where("1=1")
-                .And("2=2")
-                .Or("3=3");
+                Select.Column("year(sj) as [year]")
+                .Form("Enterprise_CZSJYF")
+                .GroupBy("year(sj)")
+                ;
 
      
 
