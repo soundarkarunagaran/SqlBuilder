@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Statment\JoinAsStatment.cs" />
+    <Compile Include="Statment\Select\JoinAsStatment.cs" />
     <Compile Include="Statment\Select\InnerJoinStatment.cs" />
     <Compile Include="Statment\Select\RightJoinStatment.cs" />
     <Compile Include="Statment\Select\LeftJoinStatment.cs" />
@@ -66,6 +66,7 @@
     <Compile Include="SqlBuilder.cs" />
     <Compile Include="Statment\Select\UnionAllStatement.cs" />
     <Compile Include="Statment\Select\UnionStatement.cs" />
+    <Compile Include="Statment\WhereCondition.cs" />
     <Compile Include="Statment\Select\WhereStatment.cs" />
     <Compile Include="Statment\StatementBase.cs" />
   </ItemGroup>
