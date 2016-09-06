@@ -1,4 +1,7 @@
-﻿namespace SqlBuilder.Statment.Select
+﻿using System;
+using System.Linq;
+
+namespace SqlBuilder.Statment.Select
 {
     public class FormStatment : StatementBase
     {
@@ -7,11 +10,19 @@
             get { return "form"; }
         }
 
-
         internal FormStatment(SqlBuilder context, string tableName)
             : base(context)
         {
-            this.StatementBock = string.Format("{0} {1}", this.Symbol, tableName);
+            if (this.Context.Statements.First(item => item.GetType() == typeof(FormStatment)) == this)
+            {
+                this.StatementBock = string.Format("{0} {1}", this.Symbol, tableName);
+            }
+            else
+            {
+                this.StatementBock = string.Format(",{0}", tableName);
+            }
+
+         
         }
 
 
@@ -23,7 +34,16 @@
         internal FormStatment(SqlBuilder context, StatementBase statment)
             : base(context)
         {
-            this.StatementBock = string.Format("{0} ({1})", this.Symbol, statment.ToString());
+            if (this.Context.Statements.First(item => item.GetType() == typeof(FormStatment)) == this)
+            {
+                this.StatementBock = string.Format("{0} {1}", this.Symbol, statment);
+
+            }
+            else
+            {
+                this.StatementBock = string.Format(", ({1})", this.Symbol, statment);
+            }
+     
         }
 
 
