@@ -19,8 +19,8 @@ namespace SqlBuilder.Test
         {
             var sql = SqlBuilder.Database(Dialect.SqlServer2005).Select.All;
             Assert.AreEqual(sql.ToString(), "select *");
-            sql = SqlBuilder.Database(Dialect.Sqlite).Select.Column("a","b").Column("c as c").Column("d");
-            Assert.AreEqual(sql.ToString(), "select a,b ,c as c ,d");
+            sql = SqlBuilder.Database(Dialect.Sqlite).Select.Column("a","b").Column("c").As("c").Column("d as d");
+            Assert.AreEqual(sql.ToString(), "select a,b ,c as c ,d as d");
         }
     }
 }

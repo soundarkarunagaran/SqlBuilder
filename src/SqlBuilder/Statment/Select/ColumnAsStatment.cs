@@ -1,30 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SqlBuilder.Statment.Select
 {
-    public class ColumnStatment : StatementBase
+    public class ColumnAsStatment: StatementBase
     {
-
-
-        internal ColumnStatment(SqlBuilder context, params string[] column)
-            : base(context)
+        internal ColumnAsStatment(SqlBuilder context, string aliasName) : base(context)
         {
-            if (this.Context.Statements.First(item => item.GetType() == typeof (ColumnStatment)) == this)
-            {
-                this.StatementBock = String.Join(",", column);
-            }
-            else
-            {
-                this.StatementBock = string.Format(",{0}", String.Join(",", column)) ;
-            }
-
+            this.StatementBock = string.Format("as {0}", aliasName);
         }
 
-        public ColumnAsStatment As( string aliasName)
-        {
-            return new ColumnAsStatment(Context, aliasName);
-        }
 
         public ColumnStatment Column(params string[] column)
         {
