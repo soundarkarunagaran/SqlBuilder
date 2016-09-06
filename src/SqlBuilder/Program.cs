@@ -13,8 +13,7 @@ namespace SqlBuilder
             var sql = SqlBuilder.Database(Dialect.Sqlite).
                 Select.Column("year(sj) as [year]")
                 .Form("Enterprise_CZSJYF")
-                .GroupBy("year(sj)")
-                ;
+                .GroupBy("year(sj)");
 
      
 
