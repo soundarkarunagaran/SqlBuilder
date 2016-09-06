@@ -8,7 +8,7 @@ namespace SqlBuilder.Statment.Select
 {
    public  class LeftJoinStatment: InnerJoinStatment
     {
-        protected virtual string Symbol
+        protected override string Symbol
         {
             get
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SqlBuilder.Statment.Select
 {
@@ -7,7 +8,15 @@ namespace SqlBuilder.Statment.Select
         internal ColumnStatment(SqlBuilder context, params string[] column)
             : base(context)
         {
-            this.StatementBock = String.Join(",", column);
+            if (this.Context.Statements.First(item => item.GetType() == typeof (ColumnStatment)) == this)
+            {
+                this.StatementBock = String.Join(",", column);
+            }
+            else
+            {
+                this.StatementBock = string.Format(",{0}", String.Join(",", column)) ;
+            }
+
         }
 
 

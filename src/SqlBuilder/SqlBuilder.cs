@@ -26,7 +26,7 @@ namespace SqlBuilder
 
         public override string ToString()
         {
-            return string.Join(" \n", this.Statements.Select(item => item.StatementBock));
+            return string.Join(" ", this.Statements.Select(item => item.StatementBock));
         }
 
         public static SqlBuilder Database(string dialect = "")

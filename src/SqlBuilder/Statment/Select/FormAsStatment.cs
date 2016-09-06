@@ -1,4 +1,4 @@
-namespace SqlBuilder.Statment.Select
+ï»¿namespace SqlBuilder.Statment.Select
 {
     public class FormAsStatment : StatementBase
     {
@@ -9,7 +9,7 @@ namespace SqlBuilder.Statment.Select
         }
 
         /// <summary>
-        /// ²éÑ¯Ò»¸ö±í
+        /// ï¿½ï¿½Ñ¯Ò»ï¿½ï¿½ï¿½ï¿½
         /// </summary>
         /// <param name="tableName"></param>
         /// <returns></returns>
@@ -19,7 +19,7 @@ namespace SqlBuilder.Statment.Select
         }
 
         /// <summary>
-        /// ×Ó²éÑ¯
+        /// ï¿½Ó²ï¿½Ñ¯
         /// </summary>
         /// <param name="statment"></param>
         /// <returns></returns>
