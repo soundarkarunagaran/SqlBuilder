@@ -44,11 +44,19 @@ namespace SqlBuilder.Test
 
 
         [TestMethod]
-        public void InnerForm()
+        public void TestJoin()
         {
             var sql = SqlBuilder.Database(Dialect.SqlServer2005).
+                Select.All.Form("table1").As("t1").InnerJoin("table2").As("t2").On("t1.id=t2.tId");
+            Assert.AreEqual(sql.ToString(), "select * form table1 as t1 inner join table2 as t2 on t1.id=t2.tId");
+
+             sql = SqlBuilder.Database(Dialect.SqlServer2005).
                 Select.All.Form("table1").As("t1").LeftJoin("table2").As("t2").On("t1.id=t2.tId");
             Assert.AreEqual(sql.ToString(), "select * form table1 as t1 left join table2 as t2 on t1.id=t2.tId");
+
+            sql = SqlBuilder.Database(Dialect.SqlServer2005).
+                Select.All.Form("table1").As("t1").RightJoin("table2").As("t2").On("t1.id=t2.tId");
+            Assert.AreEqual(sql.ToString(), "select * form table1 as t1 right join table2 as t2 on t1.id=t2.tId");
         }
     }
 }
