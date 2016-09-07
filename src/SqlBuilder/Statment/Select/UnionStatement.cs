@@ -19,7 +19,7 @@ namespace SqlBuilder.Statment.Select
         {
             if (this.Context.Statements.First() == this)
             {
-                this.StatementBock = string.Format("{0}", statmen.ToString());
+                this.StatementBock = string.Format(" {0}", statmen.ToString());
             }
             else
             {

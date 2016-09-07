@@ -8,7 +8,7 @@
 
         internal WhereStatment(SqlBuilder context, string condition) : base(context)
         {
-            this.StatementBock = string.Format("where {0}", condition);
+            this.StatementBock = string.Format(" where {0}", condition);
         }
 
 

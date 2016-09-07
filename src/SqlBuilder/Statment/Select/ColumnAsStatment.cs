@@ -10,7 +10,7 @@ namespace SqlBuilder.Statment.Select
     {
         internal ColumnAsStatment(SqlBuilder context, string aliasName) : base(context)
         {
-            this.StatementBock = string.Format("as {0}", aliasName);
+            this.StatementBock = string.Format(" as {0}", aliasName);
         }
 
 

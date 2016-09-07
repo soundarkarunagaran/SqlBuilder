@@ -11,7 +11,7 @@ namespace SqlBuilder.Statment.Select
         public OrStatment(SqlBuilder context, string condition)
             : base(context)
         {
-            this.StatementBock = string.Format("or {0}", condition);
+            this.StatementBock = string.Format(" or {0}", condition);
         }
     }
 }

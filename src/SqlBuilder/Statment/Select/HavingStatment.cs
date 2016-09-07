@@ -5,7 +5,7 @@
         internal HavingStatment(SqlBuilder context, params string[] columns)
             : base(context)
         {
-            this.StatementBock = string.Format("having {0}", string.Join(",", columns));
+            this.StatementBock = string.Format(" having {0}", string.Join(",", columns));
         }
 
         public OrderByStatment OrderBy(params string[] columns)

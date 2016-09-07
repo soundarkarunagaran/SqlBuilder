@@ -5,7 +5,7 @@
         internal OrderByStatment(SqlBuilder context, params string[] columns)
             : base(context)
         {
-            this.StatementBock = string.Format("order by {0}", string.Join(",", columns));
+            this.StatementBock = string.Format(" order by {0}", string.Join(",", columns));
         }
 
         public LimitStatment Limit(int start, int end)

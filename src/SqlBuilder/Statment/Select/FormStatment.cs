@@ -15,7 +15,7 @@ namespace SqlBuilder.Statment.Select
         {
             if (this.Context.Statements.First(item => item.GetType() == typeof(FormStatment)) == this)
             {
-                this.StatementBock = string.Format("{0} {1}", this.Symbol, tableName);
+                this.StatementBock = string.Format(" {0} {1}", this.Symbol, tableName);
             }
             else
             {

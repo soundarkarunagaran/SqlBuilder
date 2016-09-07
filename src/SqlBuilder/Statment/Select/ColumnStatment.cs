@@ -12,7 +12,7 @@ namespace SqlBuilder.Statment.Select
         {
             if (this.Context.Statements.First(item => item.GetType() == typeof (ColumnStatment)) == this)
             {
-                this.StatementBock = String.Join(",", column);
+                this.StatementBock = string.Format(" {0}", String.Join(",", column));
             }
             else
             {

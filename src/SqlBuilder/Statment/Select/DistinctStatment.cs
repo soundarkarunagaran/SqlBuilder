@@ -10,7 +10,7 @@ namespace SqlBuilder.Statment.Select
     {
         internal DistinctStatment(SqlBuilder context) : base(context)
         {
-            this.StatementBock = "distinct";
+            this.StatementBock = " distinct";
         }
 
         public ColumnStatment All

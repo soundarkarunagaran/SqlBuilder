@@ -10,7 +10,7 @@ namespace SqlBuilder.Statment.Select
     {
         internal OnStatment(SqlBuilder context, string condition) : base(context)
         {
-            this.StatementBock = string.Format("on {0}", condition);
+            this.StatementBock = string.Format(" on {0}", condition);
         }
 
         public InnerJoinStatment InnerJoin(string tableName)

@@ -12,7 +12,7 @@ namespace SqlBuilder.Statment
         public JoinAsStatment(SqlBuilder context, string aliasName)
             : base(context)
         {
-            this.StatementBock = string.Format("as {0}", aliasName);
+            this.StatementBock = string.Format(" as {0}", aliasName);
         }
 
         public OnStatment On(string condition)

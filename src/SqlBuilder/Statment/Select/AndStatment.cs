@@ -11,7 +11,7 @@ namespace SqlBuilder.Statment.Select
         public AndStatment(SqlBuilder context, string condition)
             : base(context)
         {
-            this.StatementBock = string.Format("and {0}", condition);
+            this.StatementBock = string.Format(" and {0}", condition);
         }
     }
 }

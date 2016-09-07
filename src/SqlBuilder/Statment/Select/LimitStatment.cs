@@ -31,7 +31,7 @@ namespace SqlBuilder.Statment.Select
             else
             {
                 this.Context = context;
-                this.StatementBock = string.Format("limit{0},{1}", start, end);
+                this.StatementBock = string.Format(" limit{0},{1}", start, end);
             }
         }
     }

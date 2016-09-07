@@ -15,7 +15,7 @@ namespace SqlBuilder.Statment.Select
 
         internal InnerJoinStatment(SqlBuilder context, string tableName) : base(context)
         {
-            this.StatementBock = string.Format("{0} {1}", Symbol, tableName);
+            this.StatementBock = string.Format(" {0} {1}", Symbol, tableName);
         }
 
 

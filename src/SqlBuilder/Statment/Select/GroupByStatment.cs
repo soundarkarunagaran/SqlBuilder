@@ -5,7 +5,7 @@
         internal GroupByStatment(SqlBuilder context, params string[] columns)
             : base(context)
         {
-            this.StatementBock = string.Format("group by {0}", string.Join(",", columns));
+            this.StatementBock = string.Format(" group by {0}", string.Join(",", columns));
         }
 
         public HavingStatment Having(params string[] columns)
